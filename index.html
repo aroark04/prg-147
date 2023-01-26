@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <script>
     function myFunction(){    
-        document.getElementById("sample").innerHTML="Changed from a funstion in the head section"
+        document.getElementById("sample").innerHTML="Changed from a function in the head section"
     }
     </script>
     <script src="scripts/script.js"></script>
@@ -17,53 +17,34 @@
 
 <body>
     <header>
-        <h1>Adding JavaScript to HTML</h1>
+        <h1></h1>
     </header>
     <main>
-        <button type="button" onclick="myFunction()">Call Function in Head Section</button>
-        <button type="button" onclick="myFunction2()">Call Function in External Script</button>
+        <button type="button" onclick="myFunction()">Came from Head function</button>
+        <button type="button" onclick="myFunction2()">Extra Info</button>
         <p id="start"></p>
         <script>
             document.getElementById("start").innerHTML="JavaScript inside the script tag."
         </script>
 
 
-
-
         <p id="sample">
-            This paragraph has an ID of sample
+            This paragraph has an ID
         </p>
         <button type="button" onclick='document.getElementById("sample").innerHTML = "Austin Roark"'>Click Here!</button>
         <button type="button" onclick='document.getElementById("sample").style.fontSize = "30px";'>Bigger</button>
         <div class="buttons">
-            <button onclick="document.getElementById('pet').src='images/dog.jpg'">dog</button>
-            <button onclick="document.getElementById('pet').src='images/cat.jpg'">cat</button>
+            <button onclick="document.getElementById('pet').src='images/book.PNG'">Books</button>
+            <button onclick="document.getElementById('pet').src='images/galaxy.PNG'">Space</button>
+            <button onclick="document.getElementById('pet').src='images/dog.PNG'">dog</button>
         </div>
 
-        <img src="images/dog.jpg" alt="animal" id="pet" class="center">
+        <img src="images/dog.PNG" alt="animal" id="pet" class="center">
         <div class="buttons">
             <button onclick="document.getElementById('pet').style.display='block'">show</button>
             <button onclick="document.getElementById('pet').style.display='none'">hide</button>
         </div>
-
-        <div id="output">
-            <h2>Output</h2>
-            <script>
-                document.write("document.write");
-            </script>
-            <p id="oops"></p>
-            <button onclick='document.write("OOOPS!")'>OOOPS</button>
-            <script>
-                alert("Wow, This is an alert")
-            </script>
-            <script>
-                console.log("This is my log")
-            </script>
-        </div>
     </main>
-    <footer>
-        <p>&copy;2022 Meri Engel</p>
-    </footer>
 </body>
 
 </html>
