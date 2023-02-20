@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Hot/Cold Guessing Game</title>
+  <script>
+    const targetNumber = Math.floor(Math.random() * 1000) + 1;
+console.log("Target number:", targetNumber);
+let guessCount = 0;
+let previousGuess = null;
+let gameEnded = false;
+function checkGuess(guess) {
+    guess = Number(guess);
+    if (isNaN(guess)) {
+      return "Please enter a valid number.";
+    }
+}
+if (guess < 1 || guess > 1000) {
+    return "Please enter a number between 1 and 1000.";
+}
+guessCount++;
+if (guess === targetNumber) {
+    gameEnded = true;
+    return `Congrats! You guessed the correct number in ${guessCount} tries.`;
+  }
+  const guessDifference = Math.abs(guess - targetNumber);
+  let previousGuessDifference = null;
+  if (previousGuess !== null) {
+    previousGuessDifference = Math.abs(previousGuess - targetNumber);
+  }
+  previousGuess = guess;
+  if (previousGuessDifference === null || guessDifference < previousGuessDifference) {
+    return "Hot!";
+  } else {
+    return "Cold!";
+  }
+  while (!gameEnded) {
+    const guess = prompt("Guess a number between 1 and 1000:");
+    const guessFeedback = checkGuess(guess);
+    console.log(guessFeedback);
+  }
+  </script>
+</head>
+<body>
+  <h1>Hot/Cold Guessing Game</h1>
+  <p>Guess a number between 1 and 1000:</p>
+  <input type="text" id="guess-input">
+  <button onclick="guess()">Guess</button>
+  <p id="guess-feedback"></p>
+</body>
+</html>
