@@ -4,47 +4,77 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>assessment03</title>
+    <title>switch</title>
 </head>
 <body>
-    onload="displayGames()">
-    <h1>My Favorite Games</h1>
-    <div id="bookList"></div>
-    
-    <script>
-      function displayGames() {
-        const games = [          
-            {   title: "Elden Ring",
-                Publisher: "FromSoftWare",
-                publicationYear: 2022,
-                genre: "Souls-like",
-                rating: 10
-            },
-            {   title: "Borderlands 2",
-                Publisher: "2k Games",
-                publicationYear: 2012,
-                genre: "Looter Shoter",
-                rating: 9.4
-            },
-            {   title: "Escape From Tarkov",
-                Publisher: "Battlestate Games",
-                publicationYear: 2016,
-                genre: "Hyper Realism",
-                rating: 7.6
-            },
-            {   title: "The Forest",
-                Publisher: "Endnight Games",
-                publicationYear: 2014,
-                genre: "Horror",
-                rating: 9.6
-            },
-            {   title: "OverWatch 2",
-                Publisher: "Blizzard",
-                publicationYear: 2022,
-                genre: "FPS",
-                rating: 7.9
-            }];
-        }
-    </script>
+    <body>
+        <h1>Holidays by Month</h1>
+        <ul id="holidays"></ul>
+        <script>
+          const holidaysByMonth = {
+            1: ["New Year's Day", "Martin Luther King Jr. Day"],
+            2: ["Groundhog Day", "Valentine's Day"],
+            3: ["St. Patrick's Day", "International Women's Day"],
+            4: ["April Fool's Day", "Earth Day"],
+            5: ["Cinco de Mayo", "Mother's Day"],
+            6: ["Flag Day", "Father's Day"],
+            7: ["Independence Day", "Canada Day"],
+            8: ["National Aviation Day", "International Youth Day"],
+            9: ["Labor Day", "International Day of Peace"],
+            10: ["Columbus Day", "Halloween"],
+            11: ["Veterans Day", "Thanksgiving Day"],
+            12: ["Hanukkah", "Christmas Day"],
+          };
+          const holidaysList = document.getElementById("holidays");
+          let holidaysHTML = "";
+          for (let i = 1; i <= 12; i++) {
+            let holidays = "";
+            switch (i) {
+              case 1:
+                holidays = holidaysByMonth[1].join(", ");
+                break;
+              case 2:
+                holidays = holidaysByMonth[2].join(", ");
+                break;
+              case 3:
+                holidays = holidaysByMonth[3].join(", ");
+                break;
+              case 4:
+                holidays = holidaysByMonth[4].join(", ");
+                break;
+              case 5:
+                holidays = holidaysByMonth[5].join(", ");
+                break;
+              case 6:
+                holidays = holidaysByMonth[6].join(", ");
+                break;
+              case 7:
+                holidays = holidaysByMonth[7].join(", ");
+                break;
+              case 8:
+                holidays = holidaysByMonth[8].join(", ");
+                break;
+              case 9:
+                holidays = holidaysByMonth[9].join(", ");
+                break;
+              case 10:
+                holidays = holidaysByMonth[10].join(", ");
+                break;
+              case 11:
+                holidays = holidaysByMonth[11].join(", ");
+                break;
+              case 12:
+                holidays = holidaysByMonth[12].join(", ");
+                break;
+              default:
+                holidays = "No holidays found.";
+            }
+            holidaysHTML += `<li><strong>${new Date(2023, i - 1).toLocaleString('default', { month: 'long' })}:</strong> ${holidays}</li>`;
+          }
+          holidaysList.innerHTML = holidaysHTML;
+        </script>
+      </body>
+    </html>
 </body>
+<footer>AUSTIN ROARK</footer>
 </html>
