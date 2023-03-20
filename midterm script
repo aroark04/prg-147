@@ -1,0 +1,47 @@
+const dog1 = { 
+    heading: "Milky Way", 
+    image: "images/galaxy.PNG",
+    caption: "The galaxy we live in", 
+    altTag: "Milky way galaxy."
+};
+function chooseDog(dog) { 
+    if (dog == 1) { 
+        loadMe(dog1, 1); 
+    }
+}  
+function loadMe(dog, dogNum) { 
+    document.getElementById("heading" + dogNum).innerHTML = dog.heading; 
+    document.getElementById("img" + dogNum).src = dog.image; 
+    document.getElementById("img" + dogNum).style.display = "block"; 
+    document.getElementById("p" + dogNum).innerHTML = dog.caption; 
+    document.getElementById("img" + dogNum).setAttribute('alt', dog.altTag); 
+}
+var name1 = "Austin";
+
+function names() {
+    var name1 = "Austin";
+
+    
+    let firstName = "Austin",
+        lastName = "Roark";
+    document.getElementById("name").innerHTML = name1;
+    document.getElementById("full-name").innerHTML = firstName + " " + lastName;
+}
+function start() {
+let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+let monthsParagraph = document.getElementById("months");
+
+for (let i = 0; i < months.length; i++) {
+monthsParagraph.innerHTML += months[i] + "<br>";
+}
+
+let monthsString = months.toString();
+document.getElementById("string").innerHTML = monthsString;
+
+let num = 5;
+let str = "10";
+
+let result = num + str;
+
+document.getElementById("add").innerHTML = `${num} + "${str}" = ${result}`;
+}
